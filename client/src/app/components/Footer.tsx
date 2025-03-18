@@ -2,7 +2,7 @@
 
 const Footer = () => {
   return (
-    <footer className="py-2 px-5 flex justify-between items-center bg-black text-white mx-[10px] pb-[30px]">
+    <footer className="py-5 px-5 flex justify-between items-center bg-black text-white mx-0 pb-[70px]">
 
         {/* footer left */}
         <div className="w-[40%]">

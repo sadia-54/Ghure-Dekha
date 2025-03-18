@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 
 const Navbar = () => {
   return (
-    <div className="px-5 flex justify-between items-center bg-black text-white mx-[10px]">
+    <div className="px-5 py-3 flex justify-between items-center bg-black text-white mx-0">
         {/* navbar left */}
         <Link href="/">
         <img src="logo.png" alt="logo"
