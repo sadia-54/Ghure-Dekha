@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 import Explore from "./components/Explore";
+import WhyChooseUs from "./components/WhyChooseUs";
 
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <Navbar/>
       <HeroSection/>
       <Explore/>
+      <WhyChooseUs/>
       <Footer/>
     </div>
   );
