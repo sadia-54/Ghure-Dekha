@@ -1,19 +1,31 @@
-"use client"
+"use client";
 
 const HeroSection = () => {
   return (
-    <div className="container relative w-[100%] h-[300px] bg-cover bg-center bg-[url('/hero.jpg')]">
-        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-40"></div>
-        <div className="absolute flex flex-col items-center gap-[1.5vw] max-w-[100%] pt-[50px] left-[13vw]">
-            <p className="mt-[30px] font-bold text-white text-[max(3vw,10px)] leading-tight"> 
-            Plan Your Budget Friendly Trip with Ghure Dekha
-         </p>
-         <p className="mt-[10px] text-white font-semibold">
-            Discover amazing destinations in Bangladesh!
-         </p>
-        </div>
-    </div>
-  )
-}
+    <div className="relative w-full h-screen overflow-hidden">
+      {/* Video Background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+      >
+        <source src="/hero-bg.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
-export default HeroSection
+      {/* Dark Overlay */}
+      <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-0"></div>
+
+      {/* Text Content */}
+      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-[1.5vw] max-w-full pt-[50px] z-10">
+        <p className="mt-[90px] font-bold text-center text-white text-[max(3vw,10px)] leading-tight">
+          Discover The Beauty of Bangladesh with Ghure Dekha!!!
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default HeroSection;

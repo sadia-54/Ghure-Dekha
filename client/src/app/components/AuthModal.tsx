@@ -43,7 +43,7 @@ export default function AuthModal({ open, onOpenChange }: AuthModalProps) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[400px] bg-white">
+      <DialogContent className="sm:max-w-[400px] bg-white text-green-900">
         <DialogHeader>
           <DialogTitle className="font-semibold">{isLogin ? "Login" : "Sign Up"}</DialogTitle>
           <DialogDescription>
@@ -92,7 +92,7 @@ export default function AuthModal({ open, onOpenChange }: AuthModalProps) {
           </div>
 
           <DialogFooter className="flex flex-col justify-center gap-2">
-            <Button className="w-20 mx-auto" variant="submitButton" type="submit">{isLogin ? "Login" : "Sign Up"}</Button>
+            <Button className="w-20 mx-auto rounded-2xl" variant="submitButton" type="submit">{isLogin ? "Login" : "Sign Up"}</Button>
             <Button
               type="button"
               variant="ghost"
