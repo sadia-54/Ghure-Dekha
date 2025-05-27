@@ -10,12 +10,12 @@ const Footer = () => {
         <div className="w-[40%]">
         <Link href="/">
         <h1 className='logo text-2xl font-bold mt-[18px] text-green-800  relative h-[60px] w-[200px] cursor-pointer ' >
-          Ghure Dekha
+          Potheek
         </h1>
         </Link>
              <ul className="space-y-2">
                     <li className="mt-[5px]">Your ultimate travel companion for exploring Bangladesh</li>
-                    <li className="mt-[50px]">Ghure Dekha ©</li>
+                    <li className="mt-[50px]">Potheek ©</li>
              </ul>
         </div>
 

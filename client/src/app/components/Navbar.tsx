@@ -13,7 +13,7 @@ const Navbar = () => {
         {/* navbar left */}
         <Link href="/">
         <h1 className='logo text-2xl font-bold mt-[18px] text-green-800  relative h-[60px] w-[200px] cursor-pointer ' >
-          Ghure Dekha
+        পথিক
         </h1>
         </Link>
 

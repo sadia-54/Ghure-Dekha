@@ -21,7 +21,7 @@ const HeroSection = () => {
       {/* Text Content */}
       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-[1.5vw] max-w-full pt-[50px] z-10">
         <p className="mt-[90px] font-bold text-center text-white text-[max(3vw,10px)] leading-tight">
-          Discover The Beauty of Bangladesh with Ghure Dekha!!!
+          Discover The Beauty of Bangladesh with Potheek!!!
         </p>
       </div>
     </div>
