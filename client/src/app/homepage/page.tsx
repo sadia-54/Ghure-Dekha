@@ -4,6 +4,7 @@ import SelectLocation from "../components/SelectLocation";
 import { Input } from "@/components/ui/input";
 import BudgetOptions from "../components/BudgetOptions";
 import TravelPartner from "../components/TravelPartner";
+import { Button } from '@/components/ui/button'
 import React from "react";
 
 export default function page(){
@@ -45,6 +46,17 @@ export default function page(){
         Whom are you traveling with? 👨‍👩‍👧‍👦
       </h3>
       <TravelPartner />
+
+
+      <div className="">
+      <Button className=' mt-15 w-40 px-[35px] rounded-2xl transform transition duration-300 ease-in-out hover:scale-[1.05]'
+
+        variant='loginButton' size='default'>
+            Create Trip
+        </Button>
+
+        </div>
+
     
 
     </div>
