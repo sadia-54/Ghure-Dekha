@@ -3,10 +3,12 @@
 import SelectLocation from "../components/SelectLocation";
 import { Input } from "@/components/ui/input";
 import BudgetOptions from "../components/BudgetOptions";
+import TravelPartner from "../components/TravelPartner";
+import React from "react";
 
 export default function page(){
   return (
-    <div className="flex flex-col h-screen my-[60px] mx-[20%]">
+    <div className="flex flex-col my-[60px] mx-[20%]">
 
       <h1 className="text-3xl font-bold text-green-900 text-left">
         Tell us your travel details 🏕️🌴
@@ -38,6 +40,11 @@ export default function page(){
       </h3>
 
       <BudgetOptions />
+
+      <h3 className="text-xl font-semibold text-green-900 mt-12 mb-2">
+        Whom are you traveling with? 👨‍👩‍👧‍👦
+      </h3>
+      <TravelPartner />
     
 
     </div>
