@@ -23,7 +23,12 @@ const locations = [
   "Dhaka",
 ].sort(); // Sort alphabetically
 
-export default function SelectLocation(){
+type SelectLocationProps = {
+  value: string
+  onChange: (value: string) => void
+};
+
+export default function SelectLocation({value, onChange}: SelectLocationProps) {
   const [search, setSearch] = useState("");
   const [selected, setSelected] = useState("");
 
@@ -32,7 +37,10 @@ export default function SelectLocation(){
   );
 
   return (
-    <Select onValueChange={setSelected}>
+    <Select 
+    value={value}
+    onValueChange={(val) => onChange(val)}
+    >
       <SelectTrigger className="w-full">
         <SelectValue placeholder="Select a location" />
       </SelectTrigger>

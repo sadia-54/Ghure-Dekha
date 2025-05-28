@@ -5,9 +5,33 @@ import { Input } from "@/components/ui/input";
 import BudgetOptions from "../components/BudgetOptions";
 import TravelPartner from "../components/TravelPartner";
 import { Button } from '@/components/ui/button'
+import { useRouter } from 'next/navigation'
+import {useState} from 'react'
 import React from "react";
 
 export default function page(){
+
+  const router = useRouter()
+
+  // state for form fields
+  const [location, setLocation] = useState("")
+  const [days, setDays] = useState(0)
+  const [budget, setBudget] = useState("")
+  const [travelPartner, setTravelPartner] = useState("")
+  const [error, setError] = useState("")
+
+  const handleNavigation = () => {
+
+    if(!location || !days || !budget || ! travelPartner) {
+      setError("Please fill in all fields")
+      return
+    }
+
+    setError("")
+
+    router.push('/tripplanner')
+  }
+
   return (
     <div className="flex flex-col my-[60px] mx-[20%]">
 
@@ -24,7 +48,7 @@ export default function page(){
         Select your travel destination
       </h3>
 
-      <SelectLocation />
+      <SelectLocation value={location} onChange={setLocation} />
 
       <h3 className="text-xl font-semibold text-green-900 mt-12 mb-2">
         How many days do you plan to travel?
@@ -34,26 +58,34 @@ export default function page(){
         type="number"
         placeholder="Enter number of days"
         className="w-full mb-2 text-green-900"
+        value={days}
+        onChange={(e) => setDays(Number(e.target.value))}
+        min={1}
       />
 
       <h3 className="text-xl font-semibold text-green-900 mt-12 mb-2">
         What's your budget for the trip? 💰
       </h3>
 
-      <BudgetOptions />
+      <BudgetOptions value={budget} onChange={setBudget} />
 
       <h3 className="text-xl font-semibold text-green-900 mt-12 mb-2">
         Whom are you traveling with? 👨‍👩‍👧‍👦
       </h3>
-      <TravelPartner />
+
+      <TravelPartner value={travelPartner} onChange={setTravelPartner} />
 
 
       <div className="">
-      <Button className=' mt-15 w-40 px-[35px] rounded-2xl transform transition duration-300 ease-in-out hover:scale-[1.05]'
+      <Button  onClick={handleNavigation} 
+      className=' mt-15 w-40 px-[35px] rounded-2xl transform transition duration-300 ease-in-out hover:scale-[1.05]'
 
         variant='loginButton' size='default'>
             Create Trip
         </Button>
+
+        {error && <p className="text-red-500 mt-2">{error}</p>}
+
 
         </div>
 
