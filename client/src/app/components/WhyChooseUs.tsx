@@ -11,7 +11,7 @@ const WhyChooseUs = () => {
            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
     
             {/* Tips */}
-           <Card className="bg-[#D3D3D3] border-none">
+           <Card className="border-none">
             <CardContent>
                 <h2 className="font-bold">Cost-Saving Tips</h2>
                 <CardDescription>
@@ -21,7 +21,7 @@ const WhyChooseUs = () => {
            </Card>
     
            {/* Tools */}
-            <Card className="bg-[#D3D3D3] border-none">
+            <Card className="border-none">
             <CardContent>
                 <h2 className="font-bold">Trip Management Tools</h2>
                 <CardDescription>

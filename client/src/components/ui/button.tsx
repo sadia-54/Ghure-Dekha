@@ -20,8 +20,8 @@ const buttonVariants = cva(
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 cursor-pointer",
         link: "text-primary underline-offset-4 hover:underline cursor-pointer",
-        loginButton: "bg-neutral-800 text-primary-foreground shadow-xs hover:bg-gray-900 cursor-pointer",
-        submitButton: "bg-black text-white shadow-xs cursor-pointer"
+        loginButton: "bg-green-300 text-green-900 shadow-xs hover:bg-green-400 cursor-pointer rounded-lg",
+        submitButton: "bg-green-300 text-green-900 shadow-xs hover:bg-green-400 cursor-pointer rounded-lg"
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",

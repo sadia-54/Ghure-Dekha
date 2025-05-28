@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Card,
   CardContent,
@@ -14,12 +15,12 @@ import { HowToReg } from "@mui/icons-material";
 
 const Explore = () => {
   return (
-    <div className="px-6 py-10 bg-gray-100" >
+    <div className="px-6 py-10 text-green-900" >
        <h2 className="my-4 px-2 font-bold text-xl ">Explore Our Services</h2>
        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
         {/* Trip planning */}
-       <Card className="bg-[#D3D3D3] border-none">
+       <Card className=" border-none">
         <CardHeader>
             <CardTitle>
                 <Event/>
@@ -34,7 +35,7 @@ const Explore = () => {
        </Card>
 
        {/* Transport booking */}
-        <Card className="bg-[#D3D3D3] border-none">
+        <Card className="border-none">
         <CardHeader>
             <CardTitle>
                 <DirectionsBus/>
@@ -49,7 +50,7 @@ const Explore = () => {
        </Card>
 
        {/* Secure payments */}
-        <Card className="bg-[#D3D3D3] border-none">
+        <Card className=" border-none">
         <CardHeader>
             <CardTitle>
                 <Lock/>
@@ -64,7 +65,7 @@ const Explore = () => {
        </Card>
 
        {/* Certified guides */}
-        <Card className="bg-[#D3D3D3] border-none">
+        <Card className=" border-none">
         <CardHeader>
             <CardTitle>
                 <HowToReg/>
