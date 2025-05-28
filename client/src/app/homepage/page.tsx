@@ -1,6 +1,8 @@
 "use client"
 
 import SelectLocation from "../components/SelectLocation";
+import { Input } from "@/components/ui/input";
+import BudgetOptions from "../components/BudgetOptions";
 
 export default function page(){
   return (
@@ -20,6 +22,22 @@ export default function page(){
       </h3>
 
       <SelectLocation />
+
+      <h3 className="text-xl font-semibold text-green-900 mt-12 mb-2">
+        How many days do you plan to travel?
+      </h3>
+
+      <Input
+        type="number"
+        placeholder="Enter number of days"
+        className="w-full mb-2 text-green-900"
+      />
+
+      <h3 className="text-xl font-semibold text-green-900 mt-12 mb-2">
+        What's your budget for the trip? 💰
+      </h3>
+
+      <BudgetOptions />
     
 
     </div>
