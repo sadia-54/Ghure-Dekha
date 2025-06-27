@@ -27,9 +27,21 @@ export default function page(){
       return
     }
 
+    // for dummy data
+    const userSelection = {
+      userSelection:{
+        location,
+        days,
+        budget,
+        travelPartner
+      },
+    }
+
+    localStorage.setItem('tripData', JSON.stringify({userSelection}))
+
     setError("")
 
-    router.push('/tripplanner')
+    router.push('/viewtrip/:tripid')
   }
 
   return (
