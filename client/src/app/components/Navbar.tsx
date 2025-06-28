@@ -12,18 +12,22 @@ const Navbar = () => {
 
   useEffect(() => {
     if (session?.accessToken) {
-      console.log("Access Token:", session.accessToken)
-
-      // Example: Fetch user info from Google People API
+      console.log("Access Token:", session.accessToken);
+  
       fetch("https://www.googleapis.com/oauth2/v1/userinfo?alt=json", {
         headers: {
           Authorization: `Bearer ${session.accessToken}`,
         },
       })
-        .then(res => res.json())
-        .then(data => console.log("User info:", data))
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("User info:", data);
+          // Save to localStorage
+          localStorage.setItem("user", JSON.stringify(data));
+        })
+        .catch((err) => console.error("Failed to fetch user info:", err));
     }
-  }, [session])
+  }, [session]);
 
   return (
     <div className="px-5 flex justify-between items-center bg-green-100 text-black mx-0">
