@@ -3,6 +3,7 @@
 import { useParams } from "next/navigation"
 import { useEffect, useState } from "react";
 import InfoSection from "../components/InfoSection";
+import Hotels from "../components/Hotels";
 
 export default function Page() {
     
@@ -33,6 +34,7 @@ export default function Page() {
             <InfoSection trip={trip} />
 
             {/* Recommended Hotels  */}
+            <Hotels trip={trip} />
 
             {/* Daily Schedule  */}
         </div>
