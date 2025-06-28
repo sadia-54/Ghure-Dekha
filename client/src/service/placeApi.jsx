@@ -8,7 +8,7 @@ const WIKIPEDIA_API_URL = 'https://en.wikipedia.org/api/rest_v1/page/summary/'
 
 // Unsplash API for backup photos (Free with key)
 const UNSPLASH_API_URL = 'https://api.unsplash.com/search/photos'
-const UNSPLASH_ACCESS_KEY = import.meta.env.VITE_UNSPLASH_ACCESS_KEY
+const UNSPLASH_ACCESS_KEY = process.env.NEXT_PUBLIC_UNSPLASH_ACCESS_KEY;
 
 // Search places using Nominatim (replaces Google Places)
 export const GetPlaceDetails = async (data) => {

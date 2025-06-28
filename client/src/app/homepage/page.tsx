@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button'
 import { useRouter } from 'next/navigation'
 import {useState} from 'react'
 import React from "react";
+import { chatSession } from "@/service/model";
 
 export default function page(){
 
@@ -20,24 +21,49 @@ export default function page(){
   const [travelPartner, setTravelPartner] = useState("")
   const [error, setError] = useState("")
 
-  const handleNavigation = () => {
+  const handleNavigation = async () => {
 
     if(!location || !days || !budget || ! travelPartner) {
       setError("Please fill in all fields")
       return
     }
 
-    // for dummy data
-    const userSelection = {
-      userSelection:{
-        location,
-        days,
-        budget,
-        travelPartner
-      },
-    }
+    const prompt = `Generate Travel Plan for Location : {location}, for {days} Days for {travelPartner} with a {budget} budget ,Give me a Hotels options list with Hotel Name, Hotel address, Price, hotel image url, geo coordinates, rating, descriptions and suggest itinerary with place Name, Place Details, Place Image Url, Geo Coordinates, ticket Pricing, rating, Time travel each of the location for {days} days with each day plan with best time to visit in JSON format`;
 
-    localStorage.setItem('tripData', JSON.stringify({userSelection}))
+    const FINAL_PROMPT = prompt
+    .replace(`{location}`, location)
+    .replace(`{days}`, days.toString())
+    .replace(`{travelPartner}`, travelPartner)
+    .replace(`{budget}`, budget)
+    .replace(`{days}`, days.toString())
+
+    console.log(FINAL_PROMPT);
+
+    localStorage.setItem('userSelection', JSON.stringify({
+      location,
+      days,
+      budget,
+      travelPartner,
+      prompt: FINAL_PROMPT
+    }))
+
+    const result = await chatSession.sendMessage(FINAL_PROMPT)
+    console.log(result?.response?.text())
+    
+
+    // for dummy data
+    // const userSelection = {
+    //   userSelection:{
+    //     location,
+    //     days,
+    //     budget,
+    //     travelPartner
+    //   },
+    // }
+
+    // console.log("Submitted form data:", userSelection); 
+
+    // localStorage.setItem('tripData', JSON.stringify({userSelection}))
 
     setError("")
 
