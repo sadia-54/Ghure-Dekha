@@ -1,7 +1,8 @@
 'use client'
 
 export default function Hotels({ trip }: { trip: any }) {
-  const hotels = trip?.tripData?.travelPlan?.hotelsOptions || []
+    const hotels = trip?.tripData?.travelPlan?.hotelsOptions || []
+
 
   return (
     <div>
@@ -30,8 +31,8 @@ export default function Hotels({ trip }: { trip: any }) {
                 {hotel.hotelName}
               </h3>
               <p className="text-sm text-gray-700">{hotel.hotelAddress}</p>
-              <p className="text-sm mt-1">💸 {hotel.price}</p>
-              <p className="text-sm">⭐ {hotel.rating}</p>
+              <p className="text-sm font-semibold mt-1">💸 {hotel.pricePerNight}</p>
+              <p className="text-sm font-semibold">⭐ {hotel.rating}</p>
               <p className="text-sm mt-2 text-gray-600">{hotel.description}</p>
             </div>
           ))}

@@ -17,9 +17,9 @@ export default function TripSchedule({ trip }: { trip: any }) {
             const activities = day.plan || day.activities || []
 
             return (
-              <div key={index} className="mt-4 bg-white">
+              <div key={index} className="mt-4 bg-white mb-5">
                 <h3 className="font-semibold text-green-900 mb-2">
-                  Day {day.day} <br/> {day.dayPlan}
+                 Day {day.day} <br/> {day.dayPlan}
                 </h3>
 
                 <div className="grid md:grid-cols-3 gap-4">

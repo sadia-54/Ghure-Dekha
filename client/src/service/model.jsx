@@ -15,7 +15,58 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
     responseMimeType: "application/json",
   };
 
-const prompt = `Generate Travel Plan for Location : {location}, for {days} Days for {travelPartner} with a {budget} budget ,Give me a Hotels options list with Hotel Name, Hotel address, Price, hotel image url, geo coordinates, rating, descriptions and suggest itinerary with place Name, Place Details, Place Image Url, Geo Coordinates, ticket Pricing, rating, Time travel each of the location for {days} days with each day plan with best time to visit in JSON format`;
+const prompt = `Generate Travel Plan for Location : {location}, for {days} Days for {travelPartner} with a {budget} budget ,Give me a Hotels options list with Hotel Name, Hotel address, Price, hotel image url, geo coordinates, rating, descriptions and suggest itinerary with place Name, Place Details, Place Image Url, Geo Coordinates, ticket Pricing, rating, Time travel each of the location for {days} days with each day plan with best time to visit in JSON format Give me hotel options and itinerary.
+Return the response in this JSON structure:
+{
+  "travelPlan": {
+    "location": "{location}",
+    "days": {days},
+    "budget": "{budget}",
+    "travelPartner": "{travelPartner}",
+    "hotelsOptions": [
+      {
+        "hotelName": "Hotel ABC",
+        "hotelAddress": "Address",
+        "pricePerNight": "BDT 3000 - 4000",
+        "hotelImageUrl": "https://...",
+        "geoCoordinates": {
+          "latitude": 0.0,
+          "longitude": 0.0
+        },
+        "rating": 4.5,
+        "description": "Hotel description"
+      }
+    ],
+    "itinerary": [
+      {
+        "day": 1,
+        "dayPlan": "Brief description of the day's plan (e.g., 'Explore beaches and nearby markets')",
+        "plan": [
+          {
+            "placeName": "Place name",
+            "placeDetails": "Description of the place",
+            "placeImageUrl": "https://...",
+            "geoCoordinates": {
+              "latitude": 0.0,
+              "longitude": 0.0
+            },
+            "ticketPricing": "BDT 100",
+            "rating": 4.5,
+            "timeToTravel": "Morning (9 AM - 12 PM)",
+            "bestTimeToVisit": "Morning"
+          }
+        ]
+      }
+    ]
+  }
+}
+Use the keys:
+- hotelsOptions (not hotelList, hotels, hotelOptions)
+- itinerary should be an array of days
+- Each day must include day, dayPlan, and plan array
+- Each activity in plan must have the keys: placeName, placeDetails, placeImageUrl, geoCoordinates, ticketPricing, rating, timeToTravel, bestTimeToVisit
+Return only this JSON. Do not wrap it in markdown or add explanations.
+`;
 
 
   

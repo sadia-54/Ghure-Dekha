@@ -1,5 +1,8 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
 const HeroSection = () => {
   return (
     <div className="relative w-full h-screen overflow-hidden">
@@ -23,6 +26,17 @@ const HeroSection = () => {
         <p className="mt-[90px] font-bold text-center text-white text-[max(3vw,10px)] leading-tight">
           Discover The Beauty of Bangladesh with Ghure Dekha!!!
         </p>
+
+        <Link href="/homepage">
+        <Button
+        className=' mt-40 w-40 px-[35px] rounded-2xl transform transition duration-300 ease-in-out hover:scale-[1.05]'
+
+        variant='loginButton' size='default'>
+          Get Started...
+        </Button>
+        </Link>
+      </div>
+      <div>
       </div>
     </div>
   );
