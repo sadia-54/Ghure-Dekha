@@ -10,6 +10,7 @@ export const authOptions: NextAuthOptions = {
         params: {
           prompt: "consent", // force consent to get refresh_token again
           access_type: "offline",
+          scope: "openid profile email https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email",
           response_type: "code"
         }
       }

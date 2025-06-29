@@ -22,18 +22,6 @@ export default function page(){
 
   const user = session?.user
 
-  // useEffect(() => {
-  //   const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-  //     if (currentUser) {
-  //       setUser(currentUser)
-  //     } else {
-  //       setUser(null)
-  //     }
-  //   })
-
-  //   return () => unsubscribe()
-  // }, [])
-
 
   // state for form fields
   const [location, setLocation] = useState("")
