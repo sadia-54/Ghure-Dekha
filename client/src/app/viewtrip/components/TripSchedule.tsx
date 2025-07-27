@@ -1,6 +1,9 @@
 'use client'
 
-export default function TripSchedule({ trip }: { trip: any }) {
+import Image from 'next/image';
+import { Trip } from '@/types/travel'
+
+export default function TripSchedule({ trip }: { trip: Trip }) {
   const itinerary = trip?.tripData?.travelPlan?.itinerary || []
 
   return (
@@ -28,13 +31,17 @@ export default function TripSchedule({ trip }: { trip: any }) {
                       key={idx}
                       className="p-3 rounded-lg bg-gray-50 hover:bg-white transition hover:scale-[1.02] shadow-md"
                     >
-                      <img
-                        src={activity.placeImageUrl || "/spots.jpg"}
+                      <Image
+                           src={
+                              activity.placeImageUrl?.startsWith("http") &&
+                              !activity.placeImageUrl.includes("example.com")
+                                ? activity.placeImageUrl
+                                : "/spots.jpg"
+                            }
                         alt={activity.placeName}
                         className="w-full h-40 object-cover rounded-md mb-2"
-                        onError={(e) => {
-                          e.currentTarget.src = "/spots.jpg"
-                        }}
+                        width={600}
+                        height={160}
                       />
                       <h4 className="font-semibold text-green-900 text-md">
                         {activity.placeName}

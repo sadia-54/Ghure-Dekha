@@ -1,6 +1,9 @@
 'use client'
 
-export default function Hotels({ trip }: { trip: any }) {
+import Image from 'next/image';
+import { Trip } from '@/types/travel'
+
+export default function Hotels({ trip }: { trip: Trip }) {
     const hotels = trip?.tripData?.travelPlan?.hotelsOptions || []
 
 
@@ -19,13 +22,17 @@ export default function Hotels({ trip }: { trip: any }) {
               key={index}
               className=" p-3 rounded-xl shadow-lg bg-white transition hover:scale-[1.02]"
             >
-              <img
-                src={hotel.hotelImageUrl}
+              <Image
+                 src={
+                    hotel.hotelImageUrl?.startsWith("http") && !hotel.hotelImageUrl.includes("example.com")
+                      ? hotel.hotelImageUrl
+                      : "/hotels.jpg"
+                  }
                 alt={hotel.hotelName}
                 className="w-full h-30 object-cover rounded-lg"
-                onError={(e) => {
-                    e.currentTarget.src = "/hotels.jpg"; // Fallback image
-                  }}
+                width={1200}
+                height={120}
+          
                 />
               <h3 className="mt-2 text-lg font-semibold text-green-900">
                 {hotel.hotelName}

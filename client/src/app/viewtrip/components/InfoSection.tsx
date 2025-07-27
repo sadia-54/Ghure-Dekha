@@ -1,14 +1,19 @@
 'use client'
 
-export default function InfoSection({ trip }: { trip: any }) {
+import Image from 'next/image';
+import { Trip } from '@/types/travel'
+
+export default function InfoSection({ trip }: { trip: Trip }) {
   const data = trip?.tripData?.travelPlan
 
   return (
     <div>
-      <img
+      <Image
         src="/homepage.jpg"
         alt="Trip Banner"
         className="h-[340px] w-full object-cover rounded-xl"
+        width={1200}          
+        height={340}
       />
 
       <div className="my-5 flex flex-col gap-2">

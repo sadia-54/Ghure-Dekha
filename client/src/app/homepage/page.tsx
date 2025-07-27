@@ -13,10 +13,10 @@ import { useSession, signIn } from "next-auth/react"
 
 
 
-export default function page(){
+export default function Page(){
 
   const router = useRouter()
-  const { data: session, status } = useSession()
+  const { data: session } = useSession()
 
   const user = session?.user
 

@@ -82,7 +82,7 @@ type SelectLocationProps = {
 
 export default function SelectLocation({value, onChange}: SelectLocationProps) {
   const [search, setSearch] = useState("");
-  const [selected, setSelected] = useState("");
+  // const [selected, setSelected] = useState("");
 
   const filteredLocations = locations.filter((location) =>
     location.toLowerCase().includes(search.toLowerCase())

@@ -4,10 +4,11 @@ import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import Image from 'next/image';
 
 const Navbar = () => {
   const { data: session } = useSession();
-  const router = useRouter();
+  // const router = useRouter();
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -77,12 +78,14 @@ const Navbar = () => {
         {session ? (
           <>
             {/* User Profile Image */}
-            <img
+            <Image
               src={session.user?.image || "/default-profile.png"}
               alt={session.user?.name || "User Profile"}
               onClick={() => setDropdownOpen(!dropdownOpen)}
               className="w-10 h-10 rounded-full cursor-pointer border-2 border-green-700"
               title={session.user?.name || ""}
+              width={40}
+              height={40}
             />
 
             {dropdownOpen && (
