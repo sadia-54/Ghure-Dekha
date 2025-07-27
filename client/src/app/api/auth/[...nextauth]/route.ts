@@ -1,5 +1,7 @@
-import NextAuth, { NextAuthOptions } from "next-auth";
+
+import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
+import type { NextAuthOptions } from "next-auth";
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -8,12 +10,12 @@ export const authOptions: NextAuthOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
       authorization: {
         params: {
-          prompt: "consent", // force consent to get refresh_token again
+          prompt: "consent",
           access_type: "offline",
           scope: "openid profile email https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email",
-          response_type: "code"
-        }
-      }
+          response_type: "code",
+        },
+      },
     }),
   ],
   callbacks: {
@@ -32,6 +34,8 @@ export const authOptions: NextAuthOptions = {
   },
   secret: process.env.NEXTAUTH_SECRET,
 };
+
+// ✅ Correct export format for App Router
 const handler = NextAuth(authOptions);
-export { handler as GET, handler as POST }; // For GET and POST routes
-export default handler;
+export const GET = handler;
+export const POST = handler;
