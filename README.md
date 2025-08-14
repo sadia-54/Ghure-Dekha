@@ -96,6 +96,7 @@ npm run dev
 ## 🚀 Deployment
 
 The application is **fully deployed on Vercel** for production use.  
+You can access it here: [Ghure Dekha - AI Trip Planner](https://ghure-dekha-zxcb.vercel.app)  
 The site features a **responsive design**, ensuring a smooth experience across **desktop, tablet, and mobile devices**.
 
 ---
